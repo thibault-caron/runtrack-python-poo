@@ -6,7 +6,8 @@ class Operation:
     def addition(self):
         result = self.nombre1 + self.nombre2
         print(f"{self.nombre1} + {self.nombre2} = {result}")
+        return result
 
 if __name__ == "__main__":
 
-    Operation(12, 3).addition()
+    Op1 = Operation(12, 3).addition()

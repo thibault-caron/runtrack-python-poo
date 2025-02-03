@@ -6,8 +6,11 @@ class Personne:
 
     def se_presenter(presente):
         print(f"Bonjour, je suis {presente.prenom} {presente.nom}")
+        return presente.prenom, presente.nom
 
 if __name__ == "__main__":
     p1 = Personne().se_presenter()
-    p2 = Personne("John", "Doe").se_presenter()
-    p3 = Personne("Jean", "Dupond").se_presenter()
+    # p2 = Personne("John", "Doe").se_presenter()
+    # p3 = Personne("Jean", "Dupond").se_presenter()
+    # se_presenter(p3)
+    print(p1)
