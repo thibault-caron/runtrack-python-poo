@@ -9,7 +9,7 @@ class Cercle:
         return self.rayon
     
     def afficher_infos(self):
-        print(f"Rayon : {self.rayon}")
+        print(f"\nRayon : {self.rayon}")
         print(f"Diamètre : {self.diametre()}")
         print(f"Circonférence : {self.circonference()}")
         print(f"Aire : {self.aire()}")
