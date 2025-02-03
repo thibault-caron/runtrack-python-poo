@@ -1,14 +1,13 @@
 class Personne:
 
-    def __init__(self, prenom, nom):
+    def __init__(self, prenom = "Thibault", nom = "Caron"):
         self.prenom = prenom
         self.nom = nom
 
-    def se_presenter(prenom = "Thibault", nom = "Caron",):
-        print(f"Bonjour, je suis {prenom} {nom}")
+    def se_presenter(presente):
+        print(f"Bonjour, je suis {presente.prenom} {presente.nom}")
 
 if __name__ == "__main__":
-
-    Personne.se_presenter("John", "Doe")
-    Personne.se_presenter("Jean", "Dupond")
-    Personne.se_presenter()
+    p1 = Personne().se_presenter()
+    p2 = Personne("John", "Doe").se_presenter()
+    p3 = Personne("Jean", "Dupond").se_presenter()
