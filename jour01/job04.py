@@ -1,4 +1,4 @@
-class Peronne:
+class Personne:
     def __init__(self, nom, prenom):
         self.nom = nom
         self.prenom = prenom
@@ -8,6 +8,6 @@ class Peronne:
 
 if __name__ == "__main__":
 
-    Peronne.se_presenter("Thibault", "Caron")
-    Peronne.se_presenter("John", "Doe")
-    Peronne.se_presenter("Jean", "Dupond")
+    Personne.se_presenter("Thibault", "Caron")
+    Personne.se_presenter("John", "Doe")
+    Personne.se_presenter("Jean", "Dupond")
