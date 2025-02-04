@@ -2,11 +2,6 @@ class Livre:
     def __init__(self, titre = "titre", auteur = "auteur", nombre_pages = 0):
         self.__titre__ = titre
         self.__auteur__ = auteur
-
-        if int(nombre_pages) == True and nombre_pages > 0:
-            self.__nombre_pages__ = nombre_pages
-        else:
-            print("le nombre de page doit être un entier supperieur à 0 dans son instanciation")   
         
 
     def get_titre(self):
