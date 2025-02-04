@@ -33,7 +33,7 @@ class Student:
         
     
     def add_credits(self, credits):
-        if credits > 0:
+        if type(credits) is int and credits > 0:
             self.__credits += credits
             self.__level = self.__student_eval()
         else:
@@ -51,7 +51,7 @@ class Student:
 if __name__ == "__main__":
     student = Student("Doe", "John", 145)
 
-    student.add_credits(3)
+    student.add_credits("test")
     student.add_credits(5)
     student.add_credits(10)
 
