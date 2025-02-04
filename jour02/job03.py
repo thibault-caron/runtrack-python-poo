@@ -1,9 +1,9 @@
 class Livre:
-    def __init__(self, titre = "titre", auteur = "auteur", nombre_pages = 0, disponible = True):
+    def __init__(self, titre = "titre", auteur = "auteur", nombre_pages = 0):
         self.__titre = titre
         self.__auteur = auteur
         self.__nombre_pages = nombre_pages
-        self.__disponible = disponible
+        self.__disponible = True
 
 
     def get_titre(self):
@@ -60,15 +60,15 @@ class Livre:
 if __name__ == "__main__":
     livre1 = Livre("test", "thibault", 10)
 
-print("test rendre():")
-livre1.rendre()
-print(f"disponible: {livre1.verification()}")
-print("test emprunter():")
-livre1.emprunter()
-print(f"disponible: {livre1.verification()}")
-print("test emprunter():")
-livre1.emprunter()
-print(f"disponible: {livre1.verification()}")
-print("test rendre():")
-livre1.rendre()
-print(f"disponible: {livre1.verification()}")
+    print("test rendre():")
+    livre1.rendre()
+    print(f"disponible: {livre1.verification()}")
+    print("test emprunter():")
+    livre1.emprunter()
+    print(f"disponible: {livre1.verification()}")
+    print("test emprunter():")
+    livre1.emprunter()
+    print(f"disponible: {livre1.verification()}")
+    print("test rendre():")
+    livre1.rendre()
+    print(f"disponible: {livre1.verification()}")
