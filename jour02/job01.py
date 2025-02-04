@@ -3,16 +3,14 @@ class Rectangle:
         self.__longueur = longueur
         self.__largeur = largeur
 
-
     def get_longueur(self):
         return self.__longueur
     
-    def set_longueur(self, nouv_longueur):
-        self.__longueur = nouv_longueur
-
-
     def get_largeur(self):
         return self.__largeur
+    
+    def set_longueur(self, nouv_longueur):
+        self.__longueur = nouv_longueur
     
     def set_largeur(self, nouv_largeur):
         self.__largeur = nouv_largeur

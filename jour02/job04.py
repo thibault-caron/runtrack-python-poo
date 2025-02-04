@@ -1,23 +1,19 @@
 class Student:
-    def __init__(self, nom, prenom, numero_etudiant):
-        self.__nom = nom
-        self.__prenom = prenom
-        self.__numero_etudiant = numero_etudiant
+    def __init__(self, last_name, first_name, student_number):
+        self.__last_name = last_name
+        self.__first_name = first_name
+        self.__student_number = student_number
         self.__credits = 0
         self.__level = self.__student_eval()
     
-    
     def get_credits(self):
         return self.__credits
-    
 
-    def get_nom(self):
-        return self.__nom
+    def get_last_name(self):
+        return self.__last_name
     
-    
-    def get_prenom(self):
-        return self.__prenom
-    
+    def get_first_name(self):
+        return self.__first_name
 
     def __student_eval(self):
         if self.__credits >= 90:
@@ -30,31 +26,28 @@ class Student:
             return "Passable"
         else:
             return "Insuffisant"
-        
     
-    def add_credits(self, credits):
-        if type(credits) is int and credits > 0:
-            self.__credits += credits
+    def add_credits(self, added_credits):
+        if type(added_credits) is int and added_credits > 0:
+            self.__credits += added_credits
             self.__level = self.__student_eval()
         else:
-            print("Le nombre de crédits à ajouter doit être un nombre supérieur à zéro.")
-
+            print("Le namebre de crédits à ajouter doit être un nombre supérieur à zéro.")
 
     def student_info(self):
-        print(f"\nNom: {self.__nom},\nPrénom: {self.__prenom},\nNuméro étudiant: {self.__numero_etudiant},\nNiveau: {self.__level}\n")
-    
+        print(f"\nNom: {self.__last_name},\nPrénom: {self.__first_name},\nNuméro étudiant: {self.__student_number},\nNiveau: {self.__level}\n")
 
     def __str__(self):
-        return f"Nom: {self.__nom}, Prénom: {self.__prenom}, Numéro étudiant: {self.__numero_etudiant}, Crédits: {self.__credits}, Niveau: {self.__level}"
+        return f"Nom: {self.__last_name}, Prénom: {self.__first_name}, Numéro étudiant: {self.__student_number}, Crédits: {self.__credits}, Niveau: {self.__level}"
 
 
 if __name__ == "__main__":
     student = Student("Doe", "John", 145)
 
     student.add_credits("test")
-    student.add_credits(5)
-    student.add_credits(10)
+    student.add_credits(-5)
+    student.add_credits(-10)
 
-    print(f"Le nombre de crédits de {student.get_prenom()} {student.get_nom()} est de {student.get_credits()} points")
+    print(f"Le nombre de crédits de {student.get_first_name()} {student.get_last_name()} est de {student.get_credits()} points")
 
     student.student_info()

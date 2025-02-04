@@ -26,7 +26,7 @@ class Voiture:
     def set_reservoir(self, reservoir):
         self.__reservoir = reservoir
 
-    # Assesseurs (getters)
+    # Accesseurs (getters)
     def get_marque(self):
         return self.__marque
 
@@ -45,7 +45,7 @@ class Voiture:
     def get_reservoir(self):
         return self.__reservoir
 
-
+    # Autres méthodes
     def demarrer(self):
         if self.__verifier_plein() > 5:  # Vérifie si le réservoir a plus de 5 unités de carburant
             self.__en_marche = True
@@ -53,15 +53,12 @@ class Voiture:
         else:
             print("Impossible de démarrer, réservoir presque vide.")
 
-
     def arreter(self):
         self.__en_marche = False
         print("La voiture est arrêtée.")
-
-    
+  
     def __verifier_plein(self):
         return self.__reservoir
-
 
     def afficher_info(self):
         print(f"\nMarque: {self.__marque}")
@@ -70,6 +67,7 @@ class Voiture:
         print(f"Kilométrage: {self.__kilometrage} km")
         print(f"En marche: {'Oui' if self.__en_marche else 'Non'}")
         print(f"Réservoir: {self.__reservoir} litres")
+
 
 if __name__ == "__main__":
    

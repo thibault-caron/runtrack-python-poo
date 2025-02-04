@@ -4,23 +4,22 @@ class Livre:
         self.__auteur = auteur
         self.__nombre_pages = nombre_pages
         
-
+    # accesseurs
     def get_titre(self):
         return self.__titre
     
-    def set_titre(self, nouv_titre):
-        self.__titre = nouv_titre
-
-
     def get_auteur(self):
         return self.__auteur
     
-    def set_auteur(self, nouv_auteur):
-        self.__auteur = nouv_auteur
-
-
     def get_nombre_pages(self):
         return self.__nombre_pages
+    
+    # mutateurs
+    def set_titre(self, nouv_titre):
+        self.__titre = nouv_titre
+    
+    def set_auteur(self, nouv_auteur):
+        self.__auteur = nouv_auteur
     
     def set_nombre_pages(self, nouv_nombre_pages):
         if type(nouv_nombre_pages) is int and nouv_nombre_pages > 0:
