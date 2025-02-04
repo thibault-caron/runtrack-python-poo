@@ -6,7 +6,7 @@ class Produit:
     
 
     def __str__(self):
-        return f"Produit({self.nom}, Hors Taxes: {self.prix_HT}, TVA: {self.TVA}, TTC: {self.calculer_prix_ttc()})"
+        return f"Produit: (nom: {self.nom}, Prix Hors Taxes: {self.prix_HT}, TVA: {self.TVA}, Prix TTC: {self.calculer_prix_ttc()})"
 
 
     def calculer_prix_ttc(self):
@@ -41,12 +41,15 @@ class Produit:
 
 
 if __name__ == "__main__":
-    banana = Produit("banana", 1.2)
-    jouet = Produit("Jouet", 20)
+    produit1 = Produit("banana", 1.2)
+    produit2 = Produit("Jouet", 20)
 
-    print(f"{banana.afficher()}")
-    print(f"{jouet.afficher()}")
+    print(f"{produit1.afficher()}")
+    print(f"{produit2.afficher()}")
 
-    print(f"Nouvel objet {banana.renvoi_nom()} (ancien prix: {banana.renvoi_prix_HT()} HT, {banana.calculer_prix_ttc()} TTC) --> {banana.modifier_nom("Poire")} (Prix: {banana.modifier_prix(2.3)} HT, {banana.calculer_prix_ttc()} TTC)")
+    print(f"Nouvel objet {produit1.renvoi_nom()} (ancien prix: {produit1.renvoi_prix_HT()} HT, {produit1.calculer_prix_ttc()} TTC) --> {produit1.modifier_nom("Poire")} (Prix: {produit1.modifier_prix(2.3)} HT, {produit1.calculer_prix_ttc()} TTC)")
 
-    print(f"Nouvel objet {jouet.renvoi_nom()} (ancien prix: {jouet.renvoi_prix_HT()} HT, {jouet.calculer_prix_ttc()} TTC) --> {jouet.modifier_nom("Outils")} (Prix: {jouet.modifier_prix(12.5)} HT, {jouet.calculer_prix_ttc()} TTC)")
+    print(f"Nouvel objet {produit2.renvoi_nom()} (ancien prix: {produit2.renvoi_prix_HT()} HT, {produit2.calculer_prix_ttc()} TTC) --> {produit2.modifier_nom("Outils")} (Prix: {produit2.modifier_prix(12.5)} HT, {produit2.calculer_prix_ttc()} TTC)")
+
+    print(Produit())
+    print(produit1)
