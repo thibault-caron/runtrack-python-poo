@@ -1,29 +1,30 @@
 class Livre:
     def __init__(self, titre = "titre", auteur = "auteur", nombre_pages = 0):
-        self.__titre__ = titre
-        self.__auteur__ = auteur
+        self.__titre = titre
+        self.__auteur = auteur
+        self.__nombre_pages = nombre_pages
         
 
     def get_titre(self):
-        return self.__titre__
+        return self.__titre
     
     def set_titre(self, nouv_titre):
-        self.__titre__ = nouv_titre
+        self.__titre = nouv_titre
 
 
     def get_auteur(self):
-        return self.__auteur__
+        return self.__auteur
     
     def set_auteur(self, nouv_auteur):
-        self.__auteur__ = nouv_auteur
+        self.__auteur = nouv_auteur
 
 
     def get_nombre_pages(self):
-        return self.__nombre_pages__
+        return self.__nombre_pages
     
     def set_nombre_pages(self, nouv_nombre_pages):
         if int(nouv_nombre_pages) == True and nouv_nombre_pages > 0:
-            self.__nombre_pages__ = nouv_nombre_pages
+            self.__nombre_pages = nouv_nombre_pages
         else:
             print("le nombre de page doit être un entier supperieur à 0")  
 

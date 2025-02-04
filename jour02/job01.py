@@ -1,21 +1,21 @@
 class Rectangle:
     def __init__(self, longueur = 0.0, largeur = 0.0):
-        self.__longueur__ = longueur
-        self.__largeur__ = largeur
+        self.__longueur = longueur
+        self.__largeur = largeur
 
 
     def get_longueur(self):
-        return self.__longueur__
+        return self.__longueur
     
     def set_longueur(self, nouv_longueur):
-        self.__longueur__ = nouv_longueur
+        self.__longueur = nouv_longueur
 
 
     def get_largeur(self):
-        return self.__largeur__
+        return self.__largeur
     
     def set_largeur(self, nouv_largeur):
-        self.__largeur__ = nouv_largeur
+        self.__largeur = nouv_largeur
 
     
 if __name__ == "__main__":
