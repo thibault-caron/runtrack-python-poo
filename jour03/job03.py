@@ -42,38 +42,36 @@ class ListeDeTaches:
         return [tache for tache in self.taches if tache.statut == statut]
 
 
-# Tester le code
+if __name__ == "__main__":
+    # Création des tâches
+    tache1 = Tache("Acheter des courses", "Aller au magasin pour acheter des légumes et du pain")
+    tache2 = Tache("Faire les devoirs", "Réviser la leçon de mathématiques et de français")
+    tache3 = Tache("Nettoyer la maison", "Passer l'aspirateur et laver les sols", "terminée")
 
-# Création des tâches
-tache1 = Tache("Acheter des courses", "Aller au magasin pour acheter des légumes et du pain")
-tache2 = Tache("Faire les devoirs", "Réviser la leçon de mathématiques et de français")
-tache3 = Tache("Nettoyer la maison", "Passer l'aspirateur et laver les sols", "terminée")
+    # Création de la liste de tâches
+    liste_taches = ListeDeTaches()
 
-# Création de la liste de tâches
-liste_taches = ListeDeTaches()
+    # Ajouter les tâches à la liste
+    liste_taches.ajouter_tache(tache1)
+    liste_taches.ajouter_tache(tache2)
+    liste_taches.ajouter_tache(tache3)
 
-# Ajouter les tâches à la liste
-liste_taches.ajouter_tache(tache1)
-liste_taches.ajouter_tache(tache2)
-liste_taches.ajouter_tache(tache3)
+    # Afficher toutes les tâches
+    print("Toutes les tâches :")
+    liste_taches.afficher_liste()
 
-# Afficher toutes les tâches
-print("Toutes les tâches :")
-liste_taches.afficher_liste()
+    # Supprimer une tâche par son titre
+    liste_taches.supprimer_tache("Faire les devoirs")
+    print("\nAprès suppression de 'Faire les devoirs' :")
+    liste_taches.afficher_liste()
 
-# Supprimer une tâche par son titre
-liste_taches.supprimer_tache("Faire les devoirs")
-print("\nAprès suppression de 'Faire les devoirs' :")
-liste_taches.afficher_liste()
+    # Marquer une tâche comme terminée
+    liste_taches.marquer_comme_finie("Acheter des courses")
+    print("\nAprès avoir marqué 'Acheter des courses' comme terminée :")
+    liste_taches.afficher_liste()
 
-# Marquer une tâche comme terminée
-liste_taches.marquer_comme_finie("Acheter des courses")
-print("\nAprès avoir marqué 'Acheter des courses' comme terminée :")
-liste_taches.afficher_liste()
-
-# Afficher uniquement les tâches à faire
-print("\nTâches à faire :")
-taches_a_faire = liste_taches.filtrer_liste("à faire")
-for tache in taches_a_faire:
-    print(tache)
-
+    # Afficher uniquement les tâches à faire
+    print("\nTâches à faire :")
+    taches_a_faire = liste_taches.filtrer_liste("à faire")
+    for tache in taches_a_faire:
+        print(tache)

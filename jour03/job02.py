@@ -43,6 +43,9 @@ class CompteBancaire:
             self.__solde -= agios
             print(f"Agios appliqués : {agios:.2f} EUR")
             self.afficherSolde()
+        else:
+            print(f"Les Agios ne sont pas appliqués sur des solde positifs.\n"
+                  "Solde du compte: {self.__solde:.2f} EUR")
     
     def virement(self, compte_dest, montant):
         """Effectue un virement vers un autre compte"""
@@ -57,25 +60,26 @@ class CompteBancaire:
             self.afficherSolde()
 
 
-# Création de deux comptes bancaires
-compte1 = CompteBancaire("12345", "Dupont", "Jean", 1000, decouvert=True)
-compte2 = CompteBancaire("67890", "Martin", "Sophie", -150, decouvert=True)
+if __name__ == "__main__":
+    # Création de deux comptes bancaires
+    compte1 = CompteBancaire("12345", "Dupont", "Jean", 1000, decouvert=True)
+    compte2 = CompteBancaire("67890", "Martin", "Sophie", -150, decouvert=True)
 
-# Affichage des détails des comptes
-compte1.afficher()
-compte2.afficher()
+    # Affichage des détails des comptes
+    compte1.afficher()
+    compte2.afficher()
 
-# Effectuer des versements et retraits
-compte1.versement(500)    # Versement de 500 EUR sur le compte1
-compte1.retrait(200)      # Retrait de 200 EUR du compte1
-compte2.retrait(100)      # Retrait de 100 EUR du compte2 (ce compte est à découvert)
+    # Effectuer des versements et retraits
+    compte1.versement(500)    # Versement de 500 EUR sur le compte1
+    compte1.retrait(200)      # Retrait de 200 EUR du compte1
+    compte2.retrait(100)      # Retrait de 100 EUR du compte2 (ce compte est à découvert)
 
-# Appliquer des agios sur le compte à découvert
-compte2.agios()
+    # Appliquer des agios sur le compte à découvert
+    compte2.agios()
 
-# Faire un virement du compte1 vers le compte2 pour remettre celui-ci à zéro
-compte1.virement(compte2, 350)  # Virement de 350 EUR du compte1 vers le compte2
+    # Faire un virement du compte1 vers le compte2 pour remettre celui-ci à zéro
+    compte1.virement(compte2, 350)  # Virement de 350 EUR du compte1 vers le compte2
 
-# Afficher les comptes après le virement
-compte1.afficher()
-compte2.afficher()
+    # Afficher les comptes après le virement
+    compte1.afficher()
+    compte2.afficher()

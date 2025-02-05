@@ -27,25 +27,25 @@ class Personne:
         #     Ville.ajouter_habitant(Ville)
         self.__ville.ajouter_habitant()
 
+if __name__ == "__main__":
+    # Création des objets Ville
+    paris = Ville("Paris", 1000000)
+    marseille = Ville("Marseille", 861635)
 
-# Création des objets Ville
-paris = Ville("Paris", 1000000)
-marseille = Ville("Marseille", 861635)
+    # Affichage du nombre d'habitants initial pour chaque ville
+    print(f"Nombre d'habitants à Paris: {paris.get_habitants()}\n"
+        f"Nombre d'habitants à Marseille: {marseille.get_habitants()}")
 
-# Affichage du nombre d'habitants initial pour chaque ville
-print(f"Nombre d'habitants à Paris: {paris.get_habitants()}\n"
-    f"Nombre d'habitants à Marseille: {marseille.get_habitants()}")
+    # Création des objets Personne
+    john = Personne("John", 45, paris)
+    myrtille = Personne("Myrtille", 4, paris)
+    chloe = Personne("Chloé", 18, marseille)
 
-# Création des objets Personne
-john = Personne("John", 45, paris)
-myrtille = Personne("Myrtille", 4, paris)
-chloe = Personne("Chloé", 18, marseille)
+    # Chaque personne arrive dans sa ville, ce qui augmente la population
+    john.ajouterPopulation()
+    myrtille.ajouterPopulation()
+    chloe.ajouterPopulation()
 
-# Chaque personne arrive dans sa ville, ce qui augmente la population
-john.ajouterPopulation()
-myrtille.ajouterPopulation()
-chloe.ajouterPopulation()
-
-# Affichage des nouvelles populations après les arrivées
-print(f"Nombre d'habitants à Paris après les arrivées: {paris.get_habitants()}\n"
-    f"Nombre d'habitants à Marseille après l'arrivée de Chloé: {marseille.get_habitants()}")
+    # Affichage des nouvelles populations après les arrivées
+    print(f"Nombre d'habitants à Paris après les arrivées: {paris.get_habitants()}\n"
+        f"Nombre d'habitants à Marseille après l'arrivée de Chloé: {marseille.get_habitants()}")
