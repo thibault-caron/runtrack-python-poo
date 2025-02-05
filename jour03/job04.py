@@ -11,13 +11,6 @@ class Joueur:
     # accesseurs
     def get_nom(self):
         return self.__nom
-    
-    # mutateurs
-    def set_titre(self, nouv_titre):
-        self.__titre = nouv_titre
-    
-    def set_auteur(self, nouv_auteur):
-        self.__auteur = nouv_auteur
 
     def marquer_but(self):
         """Incrémente le nombre de buts marqués par le joueur"""
@@ -76,10 +69,9 @@ class Equipe:
                     i += 1
                 i = 0
                 while i < cartons_rouges:
-                    joueur.recevoir_carton_jaune()
+                    joueur.recevoir_carton_rouge()
                     i += 1
                 i = 0
-                break
 
 
 if __name__ == "__main__":
