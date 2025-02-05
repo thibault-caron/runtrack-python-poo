@@ -17,10 +17,10 @@ class Ville:
 
 
 class Personne:
-    def __init__(self, nom, age, ville):
+    def __init__(self, nom, age, instance_ville):
         self.__nom = nom
         self.__age = age
-        self.__ville = ville
+        self.__ville = instance_ville
     
     def ajouterPopulation(self):
         # if Ville.get_nom(Ville) == self.__ville:
