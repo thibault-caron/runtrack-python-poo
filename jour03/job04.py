@@ -1,60 +1,84 @@
 class Joueur:
     def __init__(self, nom, numero, position):
-        self.nom = nom
-        self.numero = numero
-        self.position = position
-        self.buts = 0
-        self.passes_decisives = 0
-        self.cartons_jaunes = 0
-        self.cartons_rouges = 0
+        self.__nom = nom
+        self.__numero = numero
+        self.__position = position
+        self.__buts = 0
+        self.__passes_decisives = 0
+        self.__cartons_jaunes = 0
+        self.__cartons_rouges = 0
+
+    # accesseurs
+    def get_nom(self):
+        return self.__nom
+    
+    # mutateurs
+    def set_titre(self, nouv_titre):
+        self.__titre = nouv_titre
+    
+    def set_auteur(self, nouv_auteur):
+        self.__auteur = nouv_auteur
 
     def marquer_but(self):
         """Incrémente le nombre de buts marqués par le joueur"""
-        self.buts += 1
+        self.__buts += 1
     
     def effectuer_passe_decisive(self):
         """Incrémente le nombre de passes décisives du joueur"""
-        self.passes_decisives += 1
+        self.__passes_decisives += 1
     
     def recevoir_carton_jaune(self):
         """Incrémente le nombre de cartons jaunes reçus"""
-        self.cartons_jaunes += 1
+        self.__cartons_jaunes += 1
     
     def recevoir_carton_rouge(self):
         """Incrémente le nombre de cartons rouges reçus"""
-        self.cartons_rouges += 1
+        self.__cartons_rouges += 1
     
     def afficher_statistiques(self):
         """Affiche les statistiques du joueur"""
-        print(f"\nNom: {self.nom}, Numéro: {self.numero}, Position: {self.position}\n"
-            f"Buts marqués: {self.buts}, Passes décisives: {self.passes_decisives}\n"
-            f"Cartons jaunes: {self.cartons_jaunes}, Cartons rouges: {self.cartons_rouges}")
+        print(f"\nNom: {self.__nom}, Numéro: {self.__numero}, Position: {self.__position}\n"
+            f"Buts marqués: {self.__buts}, Passes décisives: {self.__passes_decisives}\n"
+            f"Cartons jaunes: {self.__cartons_jaunes}, Cartons rouges: {self.__cartons_rouges}")
         print("-" * 30)
 
 
 class Equipe:
     def __init__(self, nom):
-        self.nom = nom
-        self.liste_joueurs = []
+        self.__nom = nom
+        self.__liste_joueurs = []
     
     def ajouter_joueur(self, joueur):
         """Ajoute un joueur à l'équipe"""
-        self.liste_joueurs.append(joueur)
+        self.__liste_joueurs.append(joueur)
     
     def afficher_statistiques_joueurs(self):
         """Affiche les statistiques de tous les joueurs de l'équipe"""
-        print(f"Statistiques des joueurs de l'équipe {self.nom} :")
-        for joueur in self.liste_joueurs:
+        print(f"Statistiques des joueurs de l'équipe {self.__nom} :")
+        for joueur in self.__liste_joueurs:
             joueur.afficher_statistiques()
     
     def mettre_a_jour_statistiques_joueur(self, nom_joueur, buts=0, passes=0, cartons_jaunes=0, cartons_rouges=0):
         """Met à jour les statistiques d'un joueur spécifique"""
-        for joueur in self.liste_joueurs:
-            if joueur.nom == nom_joueur:
-                joueur.buts += buts
-                joueur.passes_decisives += passes
-                joueur.cartons_jaunes += cartons_jaunes
-                joueur.cartons_rouges += cartons_rouges
+        for joueur in self.__liste_joueurs:
+            if joueur.get_nom() == nom_joueur:
+                i = 0
+                while i < buts:
+                    joueur.marquer_but()
+                    i += 1
+                i = 0
+                while i < passes:
+                    joueur.effectuer_passe_decisive()
+                    i += 1
+                i = 0
+                while i < cartons_jaunes:
+                    joueur.recevoir_carton_jaune()
+                    i += 1
+                i = 0
+                while i < cartons_rouges:
+                    joueur.recevoir_carton_jaune()
+                    i += 1
+                i = 0
                 break
 
 

@@ -47,7 +47,7 @@ class CompteBancaire:
             print(f"Les Agios ne sont pas appliqués sur des solde positifs.\n"
                   "Solde du compte: {self.__solde:.2f} EUR")
     
-    def virement(self, compte_dest, montant):
+    def virement(self, compte_destinataire, montant):
         """Effectue un virement vers un autre compte"""
         if montant <= 0:
             print("Le montant du virement doit être positif.")
@@ -55,8 +55,8 @@ class CompteBancaire:
             print("Erreur : Solde insuffisant pour effectuer le virement.")
         else:
             self.__solde -= montant
-            compte_dest.versement(montant)
-            print(f"Virement de {montant} EUR effectué vers le compte {compte_dest.__numero_compte}.")
+            compte_destinataire.versement(montant)
+            print(f"Virement de {montant} EUR effectué vers le compte {compte_destinataire.__numero_compte}.")
             self.afficherSolde()
 
 

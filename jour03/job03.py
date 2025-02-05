@@ -1,45 +1,53 @@
 class Tache:
     def __init__(self, titre, description, statut="à faire"):
-        self.titre = titre
-        self.description = description
-        self.statut = statut
+        self.__titre = titre
+        self.__description = description
+        self.__statut = statut
     
+
+        # accesseurs
+    def get_titre(self):
+        return self.__titre
+    
+    def get_statut(self):
+        return self.__statut
+
     def marquer_comme_finie(self):
         """Change le statut de la tâche à 'terminée'."""
-        self.statut = "terminée"
+        self.__statut = "terminée"
     
     def __str__(self):
         """Affiche la tâche sous forme de texte."""
-        return f"Titre: {self.titre}, Description: {self.description}, Statut: {self.statut}"
+        return f"Titre: {self.__titre}, Description: {self.__description}, Statut: {self.__statut}"
 
 
 class ListeDeTaches:
     def __init__(self):
-        self.taches = []
+        self.__taches = []
     
     def ajouter_tache(self, tache):
         """Ajoute une tâche à la liste."""
-        self.taches.append(tache)
+        self.__taches.append(tache)
     
     def supprimer_tache(self, titre):
         """Supprime une tâche de la liste par son titre."""
-        self.taches = [tache for tache in self.taches if tache.titre != titre]  #and tache.description != description ?
+        self.__taches = [tache for tache in self.__taches if tache.get_titre() != titre]  #and tache.description != description ?
     
     def marquer_comme_finie(self, titre):
         """Marque une tâche comme terminée en fonction du titre."""
-        for tache in self.taches:
-            if tache.titre == titre:
+        for tache in self.__taches:
+            if tache.get_titre() == titre:
                 tache.marquer_comme_finie()
                 break
     
     def afficher_liste(self):
         """Affiche toutes les tâches."""
-        for tache in self.taches:
+        for tache in self.__taches:
             print(tache)
     
     def filtrer_liste(self, statut):
         """Filtre les tâches par leur statut."""
-        return [tache for tache in self.taches if tache.statut == statut]
+        return [tache for tache in self.__taches if tache.get_statut() == statut]
 
 
 if __name__ == "__main__":
