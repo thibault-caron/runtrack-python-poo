@@ -33,8 +33,8 @@ paris = Ville("Paris", 1000000)
 marseille = Ville("Marseille", 861635)
 
 # Affichage du nombre d'habitants initial pour chaque ville
-print(f"Nombre d'habitants à Paris: {paris.get_habitants()}")
-print(f"Nombre d'habitants à Marseille: {marseille.get_habitants()}")
+print(f"Nombre d'habitants à Paris: {paris.get_habitants()}\n"
+    f"Nombre d'habitants à Marseille: {marseille.get_habitants()}")
 
 # Création des objets Personne
 john = Personne("John", 45, paris)
@@ -47,5 +47,5 @@ myrtille.ajouterPopulation()
 chloe.ajouterPopulation()
 
 # Affichage des nouvelles populations après les arrivées
-print(f"Nombre d'habitants à Paris après les arrivées: {paris.get_habitants()}")
-print(f"Nombre d'habitants à Marseille après l'arrivée de Chloé: {marseille.get_habitants()}")
+print(f"Nombre d'habitants à Paris après les arrivées: {paris.get_habitants()}\n"
+    f"Nombre d'habitants à Marseille après l'arrivée de Chloé: {marseille.get_habitants()}")
