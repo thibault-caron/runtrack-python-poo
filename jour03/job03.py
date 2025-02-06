@@ -23,31 +23,31 @@ class Tache:
 
 class ListeDeTaches:
     def __init__(self):
-        self.__taches = []
+        self.__liste_taches = []
     
     def ajouter_tache(self, tache):
         """Ajoute une tâche à la liste."""
-        self.__taches.append(tache)
+        self.__liste_taches.append(tache)
     
     def supprimer_tache(self, titre):
         """Supprime une tâche de la liste par son titre."""
-        self.__taches = [tache for tache in self.__taches if tache.get_titre() != titre]  #and tache.description != description ?
+        self.__liste_taches = [tache for tache in self.__liste_taches if tache.get_titre() != titre]  #and tache.description != description ?
     
     def marquer_comme_finie(self, titre):
         """Marque une tâche comme terminée en fonction du titre."""
-        for tache in self.__taches:
+        for tache in self.__liste_taches:
             if tache.get_titre() == titre:
                 tache.marquer_comme_finie()
                 break
     
     def afficher_liste(self):
         """Affiche toutes les tâches."""
-        for tache in self.__taches:
+        for tache in self.__liste_taches:
             print(tache)
     
     def filtrer_liste(self, statut):
         """Filtre les tâches par leur statut."""
-        return [tache for tache in self.__taches if tache.get_statut() == statut]
+        return [tache for tache in self.__liste_taches if tache.get_statut() == statut]
 
 
 if __name__ == "__main__":
