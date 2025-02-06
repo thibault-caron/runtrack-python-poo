@@ -22,9 +22,10 @@ class Eleve(Personne):
         print(f"J'ai {self.age} ans.")
 
 # Classe Professeur
-class Professeur:
+class Professeur(Personne):
     '''Classe Professeur'''
-    def __init__(self, matiere_enseignee):
+    def __init__(self, age, matiere_enseignee="Mathématiques"):
+        super().__init__(age)
         self.__matiere_enseignee = matiere_enseignee  # Attribut privé
 
     def enseigner(self):
@@ -36,3 +37,14 @@ eleve = Eleve()
 
 # Affichage de l'âge par défaut de l'élève
 eleve.afficher_age()
+
+eleve.bonjour()  # L'élève dit bonjour
+eleve.aller_en_cours()  # L'élève va en cours
+eleve.modifier_age(15)  # L'âge de l'élève est redéfini à 15 ans
+eleve.afficher_age()  # Affiche l'âge de l'élève (15 ans)
+
+# Instanciation du professeur
+professeur = Professeur(age=40) 
+professeur.bonjour()  # Le professeur dit bonjour
+professeur.afficher_age()
+professeur.enseigner()  # Le professeur commence le cours
