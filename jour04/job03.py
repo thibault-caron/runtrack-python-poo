@@ -1,85 +1,71 @@
-class Tache:
-    def __init__(self, titre, description, statut="à faire"):
-        self.__titre = titre
-        self.__description = description
-        self.__statut = statut
-    
+class Rectangle:
+    '''
+    Classe Rectangle
+    '''
+    def __init__(self, longueur, largeur):
+        self.__longueur = longueur
+        self.__largeur = largeur
 
-        # accesseurs
-    def get_titre(self):
-        return self.__titre
-    
-    def get_statut(self):
-        return self.__statut
+    # 
+    def perimetre(self):
+        ''' Méthode pour calculer le périmètre '''
+        return 2 * (self.__longueur + self.__largeur)
 
-    def marquer_comme_finie(self):
-        """Change le statut de la tâche à 'terminée'."""
-        self.__statut = "terminée"
-    
-    def __str__(self):
-        """Affiche la tâche sous forme de texte."""
-        return f"Titre: {self.__titre}, Description: {self.__description}, Statut: {self.__statut}"
+    def surface(self):
+        '''Méthode pour calculer la surface'''
+        return self.__longueur * self.__largeur
+
+    # Assesseurs (getters) pour longueur et largeur
+    def get_longueur(self):
+        return self.__longueur
+
+    def get_largeur(self):
+        return self.__largeur
+
+    # Mutateurs (setters) pour longueur et largeur
+    def set_longueur(self, nouv_longueur):
+        self.__longueur = nouv_longueur
+
+    def set_largeur(self, nouv_largeur):
+        self.__largeur = nouv_largeur
 
 
-class ListeDeTaches:
-    def __init__(self):
-        self.__taches = []
-    
-    def ajouter_tache(self, tache):
-        """Ajoute une tâche à la liste."""
-        self.__taches.append(tache)
-    
-    def supprimer_tache(self, titre):
-        """Supprime une tâche de la liste par son titre."""
-        self.__taches = [tache for tache in self.__taches if tache.get_titre() != titre]  #and tache.description != description ?
-    
-    def marquer_comme_finie(self, titre):
-        """Marque une tâche comme terminée en fonction du titre."""
-        for tache in self.__taches:
-            if tache.get_titre() == titre:
-                tache.marquer_comme_finie()
-                break
-    
-    def afficher_liste(self):
-        """Affiche toutes les tâches."""
-        for tache in self.__taches:
-            print(tache)
-    
-    def filtrer_liste(self, statut):
-        """Filtre les tâches par leur statut."""
-        return [tache for tache in self.__taches if tache.get_statut() == statut]
+class Parallelepipede(Rectangle):
+    '''Classe Parallelepipede qui hérite de Rectangle'''
+    def __init__(self, longueur, largeur, hauteur):
+        super().__init__(longueur, largeur)
+        self.__hauteur = hauteur  
 
+    def volume(self):
+        '''Méthode pour calculer le volume'''
+        return self.get_longueur() * self.get_largeur() * self.__hauteur
+
+    # Assesseur pour la hauteur
+    def get_hauteur(self):
+        return self.__hauteur
+
+    # Mutateur pour la hauteur
+    def set_hauteur(self, hauteur):
+        self.__hauteur = hauteur
 
 if __name__ == "__main__":
-    # Création des tâches
-    tache1 = Tache("Acheter des courses", "Aller au magasin pour acheter des légumes et du pain")
-    tache2 = Tache("Faire les devoirs", "Réviser la leçon de mathématiques et de français")
-    tache3 = Tache("Nettoyer la maison", "Passer l'aspirateur et laver les sols", "terminée")
+    # Instanciation de la classe Rectangle
+    rectangle = Rectangle(10, 5)
 
-    # Création de la liste de tâches
-    liste_taches = ListeDeTaches()
+    # Vérification des méthodes de la classe Rectangle
+    print(f"Périmètre du rectangle : {rectangle.perimetre()}")
+    print(f"Surface du rectangle : {rectangle.surface()}")
 
-    # Ajouter les tâches à la liste
-    liste_taches.ajouter_tache(tache1)
-    liste_taches.ajouter_tache(tache2)
-    liste_taches.ajouter_tache(tache3)
+    # Modification de la longueur et de la largeur
+    rectangle.set_longueur(12)
+    rectangle.set_largeur(6)
 
-    # Afficher toutes les tâches
-    print("Toutes les tâches :")
-    liste_taches.afficher_liste()
+    # Vérification des nouvelles valeurs
+    print(f"Nouveau périmètre du rectangle : {rectangle.perimetre()}")
+    print(f"Nouvelle surface du rectangle : {rectangle.surface()}")
 
-    # Supprimer une tâche par son titre
-    liste_taches.supprimer_tache("Faire les devoirs")
-    print("\nAprès suppression de 'Faire les devoirs' :")
-    liste_taches.afficher_liste()
+    # Instanciation de la classe Parallelepipede
+    parallelepipede = Parallelepipede(10, 5, 8)
 
-    # Marquer une tâche comme terminée
-    liste_taches.marquer_comme_finie("Acheter des courses")
-    print("\nAprès avoir marqué 'Acheter des courses' comme terminée :")
-    liste_taches.afficher_liste()
-
-    # Afficher uniquement les tâches à faire
-    print("\nTâches à faire :")
-    taches_a_faire = liste_taches.filtrer_liste("à faire")
-    for tache in taches_a_faire:
-        print(tache)
+    # Vérification des méthodes de la classe Parallelepipede
+    print(f"Volume du parallélépipède : {parallelepipede.volume()}") 
