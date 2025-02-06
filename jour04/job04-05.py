@@ -4,6 +4,7 @@ class Forme:
     def aire(self):
         return 0  
 
+
 class Rectangle(Forme):
     '''Classe Rectangle qui hérite de la classe Forme'''
     def __init__(self, largeur, hauteur):
@@ -18,11 +19,12 @@ class Rectangle(Forme):
 class Cercle(Forme):
     '''Classe Cercle qui hérite de la classe Forme'''
     def __init__(self, radius):
-        self.radius = radius  # Attribut radius
+        self.radius = radius
 
-    # Surcharge de la méthode aire pour calculer l'aire du cercle
     def aire(self):
-        return math.pi * (self.radius ** 2)  # L'aire du cercle (π * r²)
+        '''Surcharge de la méthode aire pour calculer l'aire du cercle'''
+        return math.pi * (self.radius ** 2)
+
 
 if __name__ == "__main__":
     # Instanciation de la classe Rectangle et Cercle
