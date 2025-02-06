@@ -6,7 +6,6 @@ class Rectangle:
         self.__longueur = longueur
         self.__largeur = largeur
 
-    # 
     def perimetre(self):
         ''' Méthode pour calculer le périmètre '''
         return 2 * (self.__longueur + self.__largeur)
