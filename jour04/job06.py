@@ -7,13 +7,13 @@ class Vehicule:
         self.prix = prix
 
     def informations_vehicule(self):
-        print(f"Marque : {self.marque}\n"
+        print(f"\nMarque : {self.marque}\n"
             f"Modèle : {self.modele}\n"
             f"Année : {self.annee}\n"
             f"Prix : {self.prix}€")
         
     def demarrer(self):
-        print("Attention, je roule")
+        print("\nAttention, je roule")
 
 
 class Voiture(Vehicule):
@@ -28,7 +28,7 @@ class Voiture(Vehicule):
 
     def demarrer(self):
         '''Surcharge de la méthode demarrer pour la classe Voiture'''
-        print(f"{self.marque} {self.modele} : C'est parti, je roule en voiture !")
+        print(f"\n{self.marque} {self.modele} : C'est parti, je roule en voiture !")
 
 
 class Moto(Vehicule):
@@ -43,7 +43,7 @@ class Moto(Vehicule):
 
     def demarrer(self):
         '''Surcharge de la méthode demarrer pour la classe Moto'''
-        print(f"{self.marque} {self.modele} : Vroom vroom, je roule en moto !")
+        print(f"\n{self.marque} {self.modele} : Vroom vroom, je roule en moto !")
 
 if __name__ == "__main__":
     # Instanciation de la classe Voiture
